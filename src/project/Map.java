@@ -44,23 +44,23 @@ public class Map extends MapInformationsAbstract  {
 		mapa[0][m-1]="┐";
 		mapa[n-1][0]="└";
 		
-		rover = new MarsRover();
+		/*rover = new MarsRover();
 		rover.x = RandomCoord.getRandX(this);
 		rover.y = RandomCoord.getRandY(this);
-		mapa[rover.x][rover.y]= rover.appearance; 
+		mapa[rover.x][rover.y]= rover.appearance; */
 		
-		for(int i=0;i<numOfGenW;i++)  //na razie jest stala 20
+		for(int i=0;i<numOfGenW;i++) 
 		{
-			this.water[i] = new Resources();  //trzeba zainicjowac kazdy obiekt w talblicy, cholernie WAZNE !!!
-			this.water[i].appearance = "W";
-			this.water[i].x = RandomCoord.getRandX(this);
-			this.water[i].y = RandomCoord.getRandY(this);
+			water[i] = new Resources();  //trzeba zainicjowac kazdy obiekt w talblicy, cholernie WAZNE !!!
+			water[i].appearance = "W";
+			water[i].x = RandomCoord.getRandX(this);
+			water[i].y = RandomCoord.getRandY(this);
 			mapa[water[i].x][water[i].y] = water[i].appearance;
 		}
 		
 		for(int i=0;i<numOfGenO;i++)  
 		{
-			this.oxygen[i] = new Resources(); 
+			oxygen[i] = new Resources(); 
 			oxygen[i].appearance = "O";
 			oxygen[i].x = RandomCoord.getRandX(this);
 			oxygen[i].y = RandomCoord.getRandY(this);
@@ -69,7 +69,7 @@ public class Map extends MapInformationsAbstract  {
 		
 		for(int i=0;i<numOfGenF;i++)  
 		{
-			this.food[i] = new Resources(); 
+			food[i] = new Resources(); 
 			food[i].appearance = "F";
 			food[i].x = RandomCoord.getRandX(this);
 			food[i].y = RandomCoord.getRandY(this);

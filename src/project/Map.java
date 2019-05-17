@@ -18,9 +18,9 @@ public class Map extends MapInformationsAbstract  {
 		collectedO = 0;
 		collectedF = 0;
 		collectedW = 0;
-		necessaryO = 20;
-		necessaryF = 20;
-		necessaryW = 20;
+		necessaryO = 10;
+		necessaryF = 10;
+		necessaryW = 10;
 		
 		water= new Resources[numOfGenW];
 		oxygen= new Resources[numOfGenO];

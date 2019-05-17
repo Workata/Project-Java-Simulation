@@ -8,5 +8,4 @@ public abstract class MapInformationsAbstract { //ewentualnie interfejs zamiast 
 	public int necessaryO, necessaryF, necessaryW;
 
 	
-
 }

@@ -5,11 +5,11 @@ import java.util.*;
 
 public class Moves {
 	
-	private static int i;
-	private static  int j;
+	private int i;
+	private int j;
 	
 	
-	public static void moveElement(MapElementsAbstract objOnMap, Map map)  //polimorfizm bo moge przekazac astronaute lub lazik lub jakies zagrozenia 
+	public void moveElement(MapElementsAbstract objOnMap, Map map)  //polimorfizm bo moge przekazac astronaute lub lazik lub jakies zagrozenia 
 	{
 		i = objOnMap.getX();  //mozna samo .x ale z funkcja jest ciekawiej
 		j = objOnMap.getY();  //wyglada bardziej profesjonalnie xdd
@@ -17,7 +17,7 @@ public class Moves {
 	}
 	
 		
-	public static void move(int ii,int jj,MapElementsAbstract objOnMap, Map map)
+	private void move(int ii,int jj,MapElementsAbstract objOnMap, Map map)
 	{
 		map.mapa[i][j]=" ";  //stare miejsce na mapie danego obiektu
 		
@@ -32,7 +32,7 @@ public class Moves {
 	}
 	
 	
-	public static void find(MapElementsAbstract objOnMap, Map map)
+	private void find(MapElementsAbstract objOnMap, Map map)
 	{
 		Random rand = new Random();
 		int liczba;

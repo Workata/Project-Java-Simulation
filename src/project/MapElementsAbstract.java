@@ -4,6 +4,7 @@ public abstract class MapElementsAbstract {
 	
 	public int x,y;
 	public String appearance; //wyglad elementu na mapie
+	public Moves step = new Moves(); //kolejna agregacja "Mozliwosc ruchu nalezy do obiektow mapy"
 	
 	public MapElementsAbstract()
 	{
@@ -18,7 +19,8 @@ public abstract class MapElementsAbstract {
 
 	public void makeMove(Map map)
 	{
-		Moves.moveElement(this, map);
+		step.moveElement(this, map);
+		//Moves.moveElement(this, map);
 	}
 	
 

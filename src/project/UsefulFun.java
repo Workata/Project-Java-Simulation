@@ -1,9 +1,5 @@
 package project;
 
-import java.awt.Toolkit;
-import java.util.Random;
-
-
 public class UsefulFun {
 	
 	public static void sleep(int howLong)   //howLong ile czasu w milisekundach

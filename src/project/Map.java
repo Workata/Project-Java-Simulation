@@ -1,6 +1,5 @@
 package project;
 
-import java.util.*;
 
 public class Map extends MapInformationsAbstract  {
 	
@@ -8,7 +7,7 @@ public class Map extends MapInformationsAbstract  {
 	Resources water[];
 	Resources oxygen[];
 	Resources food[];
-	MarsRover rover;
+	//MarsRover rover;
 
 	public Map()                                //domyslny konstruktor, bez parametrow
 	{	
@@ -47,7 +46,7 @@ public class Map extends MapInformationsAbstract  {
 		/*rover = new MarsRover();
 		rover.x = RandomCoord.getRandX(this);
 		rover.y = RandomCoord.getRandY(this);
-		mapa[rover.x][rover.y]= rover.appearance; */
+		mapa[rover.x][rover.y]= rover.appearance;*/ 
 		
 		for(int i=0;i<numOfGenW;i++) 
 		{
@@ -82,7 +81,7 @@ public class Map extends MapInformationsAbstract  {
 		//uzupelnic
 	}
 	
-	public  void mapOutput(Colony colony)
+	public  void mapOutput(Colony colony,MarsRover rover)
 	{
 		for(int i=0;i<n;i++)
 		{
@@ -94,6 +93,7 @@ public class Map extends MapInformationsAbstract  {
 			if(i==1) System.out.print("        Oxygen: " + collectedO);
 			if(i==2) System.out.print("        Food: " + collectedF);
 			if(i==4) System.out.print("        Day: " + day);
+			if(i==5) System.out.print("        Fuel: " + rover.fuel);
 			if(i==6) System.out.print("        Support coming in "+ (colony.frequencyOfSpawn - (day % colony.frequencyOfSpawn)) +" days");
 			if(i==8) System.out.print("        Number of Astronauts: "+colony.numberOfA);
 			System.out.print("\n");

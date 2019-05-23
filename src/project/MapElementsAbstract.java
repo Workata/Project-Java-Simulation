@@ -20,7 +20,6 @@ public abstract class MapElementsAbstract {
 	public void makeMove(Map map)
 	{
 		step.moveElement(this, map);
-		//Moves.moveElement(this, map);
 	}
 	
 

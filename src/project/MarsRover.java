@@ -3,6 +3,8 @@ package project;
 public class MarsRover extends MapElementsAbstract{
 	
 	public int fuel;
+	public boolean charging = false;
+	public int batteryStatus = 0;
 	
 	public MarsRover()
 	{
@@ -10,12 +12,28 @@ public class MarsRover extends MapElementsAbstract{
 		appearance = "R";
 	}
 	
-	public void checkFuel(Map map)
+	private void charge(Map map)
 	{
-		if(fuel <= 0) 
+		charging = true;
+		if(batteryStatus == 100)
+		{
+			appearance = "R";
+			map.mapa[this.x][this.y] = appearance;
+			charging = false;
+			fuel = 100;
+			batteryStatus = 0;
+		}
+		else batteryStatus += 5;
+	}
+	
+	public void checkStatus(Map map)
+	{
+		if (charging) charge(map);
+	    else if(fuel <= 0) 
 		{
 			appearance = "r";
-			map.mapa[this.x][this.y] = "r";
+			map.mapa[this.x][this.y] = appearance;
+			charge(map);
 		}
 		else makeMove(map);
 	}

@@ -93,8 +93,9 @@ public class Map extends MapInformationsAbstract  {
 			if(i==1) System.out.print("        Oxygen: " + collectedO);
 			if(i==2) System.out.print("        Food: " + collectedF);
 			if(i==4) System.out.print("        Day: " + day);
-			if(i==5) System.out.print("        Fuel: " + rover.fuel);
-			if(i==6) System.out.print("        Support coming in "+ (colony.frequencyOfSpawn - (day % colony.frequencyOfSpawn)) +" days");
+			if(i==5) System.out.print("        Support coming in "+ (colony.frequencyOfSpawn - (day % colony.frequencyOfSpawn)) +" days");
+			if(i==7 && rover.charging ==false) System.out.print("        Fuel: " + rover.fuel);
+			if(i==7 && rover.charging ==true) System.out.print("        Charging: " + rover.batteryStatus +"%");
 			if(i==8) System.out.print("        Number of Astronauts: "+colony.numberOfA);
 			System.out.print("\n");
 		}

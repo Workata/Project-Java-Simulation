@@ -1,6 +1,5 @@
 package project;
 
-import java.util.*;
 
 public class MainClass {  //Mozna zrobic klase "Symulacja" z funkcja main 
 
@@ -19,7 +18,7 @@ public class MainClass {  //Mozna zrobic klase "Symulacja" z funkcja main
 		while(true)
 		{
 			for(int i=0;i<firstColony.numberOfA;i++) firstColony.table[i].makeMove(firstMap);
-			for(int i=0;i<2;i++) rover.checkFuel(firstMap);
+			for(int i=0;i<2;i++) rover.checkStatus(firstMap);
 			
 			if(firstMap.necessaryF <= firstMap.collectedF && firstMap.necessaryO <= firstMap.collectedO && firstMap.necessaryW <= firstMap.collectedW )
 			{

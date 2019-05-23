@@ -1,8 +1,5 @@
 package project;
 
-import java.util.Random;
-
-
 public class Colony {
 	
 	public int numberOfA = 0,frequencyOfSpawn;

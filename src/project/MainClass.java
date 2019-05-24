@@ -1,5 +1,13 @@
 package project;
 
+/** Simulation
+ * 
+ * @author Jakub Tołściuk
+ * @author Piotr Gralczyk
+ * @author Michał Pijanowski
+ * @version 1.3.5
+ */
+
 
 public class MainClass {  //Mozna zrobic klase "Symulacja" z funkcja main 
 

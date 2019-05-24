@@ -11,8 +11,8 @@ public class Moves {
 	
 	public void moveElement(MapElementsAbstract objOnMap, Map map)  //polimorfizm bo moge przekazac astronaute lub lazik lub jakies zagrozenia 
 	{
-		i = objOnMap.getX();  //mozna samo .x ale z funkcja jest ciekawiej
-		j = objOnMap.getY();  //wyglada bardziej profesjonalnie xdd
+		i = objOnMap.getX();  
+		j = objOnMap.getY();  
 		find(objOnMap, map);
 	}
 	
@@ -39,8 +39,8 @@ public class Moves {
 		else return false;
 	}
 	
-	private void find(MapElementsAbstract objOnMap, Map map)
-	{
+	private void find(MapElementsAbstract objOnMap, Map map) //rozpatrujemy wszystkie przypadki umiejscowienia obiektu
+	{                                                        //poniewaz np. przy obwodzie mapy ma ograniczony ruch (nie moze wyjsc za mape)
 		Random rand = new Random();
 		int liczba;
 		

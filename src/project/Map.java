@@ -17,9 +17,9 @@ public class Map extends MapInformationsAbstract  {
 		collectedO = 0;
 		collectedF = 0;
 		collectedW = 0;
-		necessaryO = 10;
-		necessaryF = 10;
-		necessaryW = 10;
+		necessaryO = 6;
+		necessaryF = 3;
+		necessaryW = 7;
 		
 		water= new Resources[numOfGenW];
 		oxygen= new Resources[numOfGenO];
@@ -76,7 +76,7 @@ public class Map extends MapInformationsAbstract  {
 		}
 	}
 	
-	public Map(int n, int m)                     //konstruktor z podanymi parametrami
+	public Map(int n, int m /*...*/)                     //konstruktor z podanymi parametrami
 	{
 		//uzupelnic
 	}
@@ -89,9 +89,9 @@ public class Map extends MapInformationsAbstract  {
 			{
 				System.out.print(mapa[i][j]);
 			}
-			if(i==0) System.out.print("        Water: " + collectedW);
-			if(i==1) System.out.print("        Oxygen: " + collectedO);
-			if(i==2) System.out.print("        Food: " + collectedF);
+			if(i==0) System.out.print("        Water: " + collectedW + " / " + necessaryW);
+			if(i==1) System.out.print("        Oxygen: " + collectedO + " / " + necessaryO);
+			if(i==2) System.out.print("        Food: " + collectedF + " / " + necessaryF);
 			if(i==4) System.out.print("        Day: " + day);
 			if(i==5) System.out.print("        Support coming in "+ (colony.frequencyOfSpawn - (day % colony.frequencyOfSpawn)) +" days");
 			if(i==7 && rover.charging ==false) System.out.print("        Fuel: " + rover.fuel);

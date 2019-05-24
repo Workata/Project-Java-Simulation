@@ -42,7 +42,7 @@ public class MarsRover extends MapElementsAbstract{
 	public void makeMove(Map map)     //Tutaj mamy paliwo przy ruchu, wiec nadpisujemy funkcje ruchu
 	{
 		step.moveElement(this, map);
-		fuel = fuel - 2;
+		fuel -= 2;
 	}
 	
 	

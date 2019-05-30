@@ -4,9 +4,9 @@ package project;
 public class Map extends MapInformationsAbstract  {
 	
 	public String[][] mapa ;
-	Resources water[];
-	Resources oxygen[];
-	Resources food[];
+	MapElementsAbstract water[];
+	MapElementsAbstract oxygen[];
+	MapElementsAbstract food[];
 	//MarsRover rover;
 
 	public Map()                                //domyslny konstruktor, bez parametrow
@@ -78,7 +78,7 @@ public class Map extends MapInformationsAbstract  {
 	
 	public Map(int n, int m /*...*/)                     //konstruktor z podanymi parametrami
 	{
-		//uzupelnic
+		//TODO ...
 	}
 	
 	public  void mapOutput(Colony colony,MarsRover rover)

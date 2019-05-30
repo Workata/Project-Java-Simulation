@@ -3,12 +3,12 @@ package project;
 import java.awt.Toolkit;
 import java.util.*;  
 
-public class Moves {
+public class Moves implements IMoves{
 	
 	private int i;
 	private int j;
 	
-	
+	@Override
 	public void moveElement(MapElementsAbstract objOnMap, Map map)  //polimorfizm bo moge przekazac astronaute lub lazik lub jakies zagrozenia 
 	{
 		i = objOnMap.getX();  

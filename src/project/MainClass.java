@@ -5,7 +5,7 @@ package project;
  * @author Jakub Tołściuk
  * @author Piotr Gralczyk
  * @author Michał Pijanowski
- * @version 1.3.5
+ * @version 2.5.1
  */
 
 
@@ -14,19 +14,12 @@ public class MainClass {  //Mozna zrobic klase "Symulacja" z funkcja main
 	public static void main(String [] args)
 	{
 		Map firstMap = new Map();              //w przyszlosci nie bedzie konstruktora domyslnego tylko z parametrami
-		Colony firstColony = new Colony(10);  // (po ilu turach nowy astronauta)
-		
-		MarsRover rover;
-		
-		rover = new MarsRover();
-		rover.x = RandomCoord.getRandX(firstMap);
-		rover.y = RandomCoord.getRandY(firstMap);
-		firstMap.mapa[rover.x][rover.y]= rover.appearance;
-		
+		//Colony firstColony = new Colony(10);  // (po ilu turach nowy astronauta)
+
 		while(true)
 		{
-			for(int i=0;i<firstColony.numberOfA;i++) firstColony.table[i].makeMove(firstMap);
-			for(int i=0;i<2;i++) rover.checkStatus(firstMap); //lazik robi aktualnie 2 ruchy dziennie
+			for(int i=0;i<firstMap.colony.getNumberOfA();i++) firstMap.colony.getPointedAstro(i).makeMove(firstMap);
+			for(int i=0;i<2;i++) firstMap.rover.checkStatus(firstMap); //lazik robi aktualnie 2 ruchy dziennie
 			
 			//wyrzucic z maina, sprawdza czy sa spelnione warunki zakonczenia symulacji
 			if(firstMap.necessaryF <= firstMap.collectedF && firstMap.necessaryO <= firstMap.collectedO && firstMap.necessaryW <= firstMap.collectedW )
@@ -35,16 +28,16 @@ public class MainClass {  //Mozna zrobic klase "Symulacja" z funkcja main
 				for(int i=0;i<20;i++)
 				{
 					if(i==4) System.out.println("          Liczba dni: "+firstMap.day);
-					if(i==5) System.out.println("          Liczba astronautow ostatniego dnia: "+firstColony.numberOfA);
+					if(i==5) System.out.println("          Liczba astronautow ostatniego dnia: "+firstMap.colony.getNumberOfA());
 					else System.out.println();
 				}
 				break;
 			}
 			// (up) wyrzucic z maina
 
-			firstColony.addNewA(firstMap);
+			firstMap.colony.addNewA(firstMap);
 			
-			firstMap.mapOutput(firstColony,rover);
+			firstMap.mapOutput(firstMap.colony,firstMap.rover);
 			
 			UsefulFun.sleep(1000); //dlugosc dnia to aktualnie 1s , bedzie mozna zmienic w parametrach symulacji
 			

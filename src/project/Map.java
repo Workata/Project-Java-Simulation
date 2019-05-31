@@ -4,10 +4,11 @@ package project;
 public class Map extends MapInformationsAbstract  {
 	
 	public String[][] mapa ;
-	MapElementsAbstract water[];
+	MapElementsAbstract water[]; 
 	MapElementsAbstract oxygen[];
 	MapElementsAbstract food[];
-	//MarsRover rover;
+	MapElementsAbstract rover;
+	IColony colony;
 
 	public Map()                                //domyslny konstruktor, bez parametrow
 	{	
@@ -43,10 +44,10 @@ public class Map extends MapInformationsAbstract  {
 		mapa[0][m-1]="┐";
 		mapa[n-1][0]="└";
 		
-		/*rover = new MarsRover();
+		rover = new MarsRover();
 		rover.x = RandomCoord.getRandX(this);
 		rover.y = RandomCoord.getRandY(this);
-		mapa[rover.x][rover.y]= rover.appearance;*/ 
+		mapa[rover.x][rover.y]= rover.appearance;
 		
 		for(int i=0;i<numOfGenW;i++) 
 		{
@@ -81,7 +82,7 @@ public class Map extends MapInformationsAbstract  {
 		//TODO ...
 	}
 	
-	public  void mapOutput(Colony colony,MarsRover rover)
+	public  void mapOutput(IColony colony,MapElementsAbstract rover)
 	{
 		for(int i=0;i<n;i++)
 		{
@@ -93,10 +94,10 @@ public class Map extends MapInformationsAbstract  {
 			if(i==1) System.out.print("        Oxygen: " + collectedO + " / " + necessaryO);
 			if(i==2) System.out.print("        Food: " + collectedF + " / " + necessaryF);
 			if(i==4) System.out.print("        Day: " + day);
-			if(i==5) System.out.print("        Support coming in "+ (colony.frequencyOfSpawn - (day % colony.frequencyOfSpawn)) +" days");
+			if(i==5) System.out.print("        Support coming in "+ (colony.getFrequencyOfSpawn() - (day % colony.getFrequencyOfSpawn())) +" days");
 			if(i==7 && rover.charging ==false) System.out.print("        Fuel: " + rover.fuel);
 			if(i==7 && rover.charging ==true) System.out.print("        Charging: " + rover.batteryStatus +"%");
-			if(i==8) System.out.print("        Number of Astronauts: "+colony.numberOfA);
+			if(i==8) System.out.print("        Number of Astronauts: "+colony.getNumberOfA());
 			System.out.print("\n");
 		}
 		System.out.print("\n");

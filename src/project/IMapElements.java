@@ -5,5 +5,6 @@ public interface IMapElements {
 	public int getX();
 	public int getY();
 	public void makeMove(Map map);
+	public void checkStatus(Map map);
 	
 }

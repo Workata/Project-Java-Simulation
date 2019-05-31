@@ -1,6 +1,6 @@
 package project;
 
-public class Colony {
+public class Colony implements IColony {
 	
 	public int numberOfA = 0,frequencyOfSpawn;
 	private int x,y;
@@ -12,6 +12,7 @@ public class Colony {
 		this.frequencyOfSpawn = spawnFrequency;
 	}
 	
+	@Override
 	public void addNewA(Map map)
 	{
 		if(map.day % frequencyOfSpawn == 0)
@@ -27,5 +28,19 @@ public class Colony {
 		}
 	
 	}
-
+	@Override
+	public int getNumberOfA()
+	{
+		return numberOfA;
+	}
+	@Override
+	public Astronauts getPointedAstro(int i)
+	{
+		return table[i];
+	}
+	@Override
+	public int getFrequencyOfSpawn()
+	{
+		return frequencyOfSpawn;
+	}
 }

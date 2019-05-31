@@ -2,13 +2,11 @@ package project;
 
 public class MarsRover extends MapElementsAbstract{
 	
-	public int fuel;
-	public boolean charging = false;
-	public int batteryStatus = 0;
-	
 	public MarsRover()
 	{
 		fuel = 100;
+		charging = false;
+		batteryStatus = 0;
 		appearance = "R";
 	}
 	
@@ -25,7 +23,7 @@ public class MarsRover extends MapElementsAbstract{
 		}
 		else batteryStatus += 5;
 	}
-	
+	@Override
 	public void checkStatus(Map map)
 	{
 		if (charging) charge(map);

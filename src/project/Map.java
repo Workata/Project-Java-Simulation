@@ -8,7 +8,7 @@ public class Map extends MapInformationsAbstract  {
 	MapElementsAbstract oxygen[];
 	MapElementsAbstract food[];
 	MapElementsAbstract rover;
-	IColony colony;
+	IColony colony = new Colony(10);
 
 	public Map()                                //domyslny konstruktor, bez parametrow
 	{	

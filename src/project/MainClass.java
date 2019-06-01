@@ -14,7 +14,6 @@ public class MainClass {  //Mozna zrobic klase "Symulacja" z funkcja main
 	public static void main(String [] args)
 	{
 		Map firstMap = new Map();              //w przyszlosci nie bedzie konstruktora domyslnego tylko z parametrami
-		//Colony firstColony = new Colony(10);  // (po ilu turach nowy astronauta)
 
 		while(true)
 		{
@@ -37,7 +36,7 @@ public class MainClass {  //Mozna zrobic klase "Symulacja" z funkcja main
 
 			firstMap.colony.addNewA(firstMap);
 			
-			firstMap.mapOutput(firstMap.colony,firstMap.rover);
+			firstMap.mapOutput();
 			
 			UsefulFun.sleep(1000); //dlugosc dnia to aktualnie 1s , bedzie mozna zmienic w parametrach symulacji
 			

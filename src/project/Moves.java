@@ -26,9 +26,9 @@ public class Moves implements IMoves{
 		objOnMap.y = jj;
 		
 		//potrzebuje wyglad jednego elementu tablicy (danego typu), wiec moge wybrac np. pierwszy (oxygen[0])
-		if(map.mapa[ii][jj]==map.oxygen[0].appearance) {map.collectedO++; Toolkit.getDefaultToolkit().beep();} 
-		if(map.mapa[ii][jj]==map.food[0].appearance) {map.collectedF++; Toolkit.getDefaultToolkit().beep();}
-		if(map.mapa[ii][jj]==map.water[0].appearance) {map.collectedW++; Toolkit.getDefaultToolkit().beep();}
+		if(map.mapa[ii][jj]==map.oxygen[0].getAppearance()) {map.collectedO++; Toolkit.getDefaultToolkit().beep();} 
+		if(map.mapa[ii][jj]==map.food[0].getAppearance()) {map.collectedF++; Toolkit.getDefaultToolkit().beep();}
+		if(map.mapa[ii][jj]==map.water[0].getAppearance()) {map.collectedW++; Toolkit.getDefaultToolkit().beep();}
 		
 		map.mapa[ii][jj]=objOnMap.appearance;   
 	}

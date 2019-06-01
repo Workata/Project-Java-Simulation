@@ -1,6 +1,9 @@
 package project;
 
-public class MarsRover extends MapElementsAbstract{
+public class MarsRover extends MapElementsAbstract implements IMarsRover {
+	
+	public int fuel,batteryStatus;
+	public boolean charging;
 	
 	public MarsRover()
 	{
@@ -9,6 +12,12 @@ public class MarsRover extends MapElementsAbstract{
 		batteryStatus = 0;
 		appearance = "R";
 	}
+	@Override
+	public int getFuel() {return fuel;}
+	@Override
+	public int getBatteryStatus() {return batteryStatus;}
+	@Override
+	public boolean isCharging() {return charging;}
 	
 	private void charge(Map map)
 	{

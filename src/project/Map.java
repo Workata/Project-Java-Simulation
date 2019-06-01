@@ -4,10 +4,10 @@ package project;
 public class Map extends MapInformationsAbstract  {
 	
 	public String[][] mapa ;
-	MapElementsAbstract water[]; 
-	MapElementsAbstract oxygen[];
-	MapElementsAbstract food[];
-	MapElementsAbstract rover;
+	IMapElements water[]; 
+	IMapElements oxygen[];
+	IMapElements food[];
+	IMarsRover rover = new MarsRover();
 	IColony colony = new Colony(10);
 
 	public Map()                                //domyslny konstruktor, bez parametrow
@@ -44,36 +44,35 @@ public class Map extends MapInformationsAbstract  {
 		mapa[0][m-1]="┐";
 		mapa[n-1][0]="└";
 		
-		rover = new MarsRover();
-		rover.x = RandomCoord.getRandX(this);
-		rover.y = RandomCoord.getRandY(this);
-		mapa[rover.x][rover.y]= rover.appearance;
+		rover.setX(RandomCoord.getRandX(this));
+		rover.setY(RandomCoord.getRandY(this));
+		mapa[rover.getX()][rover.getY()]= rover.getAppearance();
 		
 		for(int i=0;i<numOfGenW;i++) 
 		{
 			water[i] = new Resources();  //trzeba zainicjowac kazdy obiekt w talblicy, cholernie WAZNE !!!
-			water[i].appearance = "W";
-			water[i].x = RandomCoord.getRandX(this);
-			water[i].y = RandomCoord.getRandY(this);
-			mapa[water[i].x][water[i].y] = water[i].appearance;
+			water[i].setAppearance("W");
+			water[i].setX(RandomCoord.getRandX(this));
+			water[i].setY(RandomCoord.getRandY(this));
+			mapa[water[i].getX()][water[i].getY()] = water[i].getAppearance();
 		}
 		
 		for(int i=0;i<numOfGenO;i++)  
 		{
 			oxygen[i] = new Resources(); 
-			oxygen[i].appearance = "O";
-			oxygen[i].x = RandomCoord.getRandX(this);
-			oxygen[i].y = RandomCoord.getRandY(this);
-			mapa[oxygen[i].x][oxygen[i].y] = oxygen[i].appearance;
+			oxygen[i].setAppearance ("O");
+			oxygen[i].setX(RandomCoord.getRandX(this));
+			oxygen[i].setY(RandomCoord.getRandY(this));
+			mapa[oxygen[i].getX()][oxygen[i].getY()] = oxygen[i].getAppearance();
 		}
 		
 		for(int i=0;i<numOfGenF;i++)  
 		{
 			food[i] = new Resources(); 
-			food[i].appearance = "F";
-			food[i].x = RandomCoord.getRandX(this);
-			food[i].y = RandomCoord.getRandY(this);
-			mapa[food[i].x][food[i].y] = food[i].appearance;
+			food[i].setAppearance("F");
+			food[i].setX(RandomCoord.getRandX(this));
+			food[i].setY(RandomCoord.getRandY(this)); 
+			mapa[food[i].getX()][food[i].getY()] = food[i].getAppearance();
 		}
 	}
 	
@@ -82,7 +81,7 @@ public class Map extends MapInformationsAbstract  {
 		//TODO ...
 	}
 	
-	public  void mapOutput(IColony colony,MapElementsAbstract rover)
+	public  void mapOutput()
 	{
 		for(int i=0;i<n;i++)
 		{
@@ -95,8 +94,8 @@ public class Map extends MapInformationsAbstract  {
 			if(i==2) System.out.print("        Food: " + collectedF + " / " + necessaryF);
 			if(i==4) System.out.print("        Day: " + day);
 			if(i==5) System.out.print("        Support coming in "+ (colony.getFrequencyOfSpawn() - (day % colony.getFrequencyOfSpawn())) +" days");
-			if(i==7 && rover.charging ==false) System.out.print("        Fuel: " + rover.fuel);
-			if(i==7 && rover.charging ==true) System.out.print("        Charging: " + rover.batteryStatus +"%");
+			if(i==7 && rover.isCharging() ==false) System.out.print("        Fuel: " + rover.getFuel());
+			if(i==7 && rover.isCharging() ==true) System.out.print("        Charging: " + rover.getBatteryStatus() +"%");
 			if(i==8) System.out.print("        Number of Astronauts: "+colony.getNumberOfA());
 			System.out.print("\n");
 		}

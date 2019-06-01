@@ -3,8 +3,10 @@ package project;
 public interface IMapElements {
 	
 	public int getX();
+	public void setX(int x);
 	public int getY();
-	public void makeMove(Map map);
-	public void checkStatus(Map map);
-	
+	public void setY(int y);
+	public String getAppearance();
+	public void setAppearance(String shape);
+	public void makeMove(Map map);	
 }

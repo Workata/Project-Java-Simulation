@@ -2,7 +2,7 @@ package project;
 
 public class Colony implements IColony {
 	
-	public int numberOfA = 0,frequencyOfSpawn;
+	private int numberOfA = 0,frequencyOfSpawn;
 	private int x,y;
 	
 	public Astronauts table[] = new Astronauts[100];

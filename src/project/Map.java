@@ -7,12 +7,12 @@ public class Map extends MapInformationsAbstract  {
 	IMapElements water[]; 
 	IMapElements oxygen[];
 	IMapElements food[];
-	IMarsRover rover;// = new MarsRover();
-	IColony colony;// = new Colony(10);
+	IMarsRover rover;
+	IColony colony;
 
 	
 	
-	void creating(int numOfGenW,int numOfGenO,int numOfGenF,int n, int m) {
+	private void creating(int numOfGenW,int numOfGenO,int numOfGenF,int n, int m) {
 		
 		water= new Resources[numOfGenW];
 		oxygen= new Resources[numOfGenO];

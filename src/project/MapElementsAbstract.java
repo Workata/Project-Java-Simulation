@@ -3,8 +3,6 @@ package project;
 public abstract class MapElementsAbstract implements IMapElements {
 	
 	public int x,y;
-	/*public int fuel,batteryStatus;
-	public boolean charging;*/
 	
 	public  String appearance; //wyglad elementu na mapie
 	public IMoves step = new Moves(); //kolejna agregacja "Mozliwosc ruchu nalezy do obiektow mapy"

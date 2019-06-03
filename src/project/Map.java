@@ -7,8 +7,8 @@ public class Map extends MapInformationsAbstract  {
 	IMapElements water[]; 
 	IMapElements oxygen[];
 	IMapElements food[];
-	IMarsRover rover = new MarsRover();
-	IColony colony = new Colony(10);
+	IMarsRover rover;// = new MarsRover();
+	IColony colony;// = new Colony(10);
 
 	
 	
@@ -17,6 +17,8 @@ public class Map extends MapInformationsAbstract  {
 		water= new Resources[numOfGenW];
 		oxygen= new Resources[numOfGenO];
 		food = new Resources[numOfGenF];
+		rover = new MarsRover();
+		colony = new Colony(10);
 	
 	mapa = new String[n][m];
 	day = 1;
@@ -66,13 +68,6 @@ public class Map extends MapInformationsAbstract  {
 		mapa[food[i].getX()][food[i].getY()] = food[i].getAppearance();
 	}
 }
-	
-	
-	
-	
-	
-	
-	
 	public Map()                                //domyslny konstruktor, bez parametrow
 	{	
 		numOfGenO = 20;

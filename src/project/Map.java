@@ -1,22 +1,47 @@
 package project;
 
 
-public class Map extends MapInformationsAbstract  {
+public class Map implements IMap  {
 	
-	public String[][] mapa ;
-	IMapElements water[]; 
-	IMapElements oxygen[];
-	IMapElements food[];
-	IMarsRover rover = new MarsRover();
-	IColony colony = new Colony(10);
-
+	private String[][] mapa ;
+	public int n,m,day;
+	private int numOfGenO, numOfGenF, numOfGenW;
+	public int collectedO,collectedF,collectedW;
+	public int necessaryO, necessaryF, necessaryW;
+	private IMapElements water[]; 
+	private IMapElements oxygen[];
+	private IMapElements food[];
+	IMarsRover rover;
+	IColony colony;
 	
+	@Override
+	public int getWidth() {return n;}
+	@Override
+	public int getHeight() {return m;}
+	@Override
+	public IMapElements getInfoWater() {return water[0];}
+	@Override
+	public IMapElements getInfoFood() {return food[0];}
+	@Override
+	public IMapElements getInfoOxygen() {return oxygen[0];}	
+	@Override
+	public String getMapValue(int x, int y) {return mapa[x][y];}
+	@Override
+	public void addOxyToCollected() {collectedO++;}
+	@Override
+	public void addFooToCollected() {collectedF++;}
+	@Override
+	public void addWatToCollected() {collectedW++;}
+	@Override
+	public void setMapValue(int x, int y, String shape) { mapa[x][y] = shape; }
 	
-	void creating(int numOfGenW,int numOfGenO,int numOfGenF,int n, int m) {
+	private void creating(int numOfGenW,int numOfGenO,int numOfGenF,int n, int m) {
 		
 		water= new Resources[numOfGenW];
 		oxygen= new Resources[numOfGenO];
 		food = new Resources[numOfGenF];
+		rover = new MarsRover();
+		colony = new Colony(10);
 	
 	mapa = new String[n][m];
 	day = 1;
@@ -65,13 +90,7 @@ public class Map extends MapInformationsAbstract  {
 		food[i].setY(RandomCoord.getRandY(this)); 
 		mapa[food[i].getX()][food[i].getY()] = food[i].getAppearance();
 	}
-}
-	
-	
-	
-	
-	
-	
+}	
 	
 	public Map()                                //domyslny konstruktor, bez parametrow
 	{	
@@ -84,9 +103,7 @@ public class Map extends MapInformationsAbstract  {
 		necessaryO = 6;
 		necessaryF = 3;
 		necessaryW = 7;
-		
-		
-		
+			
 		n=20;
 		m=50;
 		creating(numOfGenW, numOfGenO,numOfGenF,n,m);
@@ -109,7 +126,7 @@ public class Map extends MapInformationsAbstract  {
 		
 	}
 	
-	public  void mapOutput()
+	public void mapOutput()
 	{
 		for(int i=0;i<this.n;i++)
 		{

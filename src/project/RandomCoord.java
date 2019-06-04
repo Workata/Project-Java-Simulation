@@ -26,7 +26,7 @@ public class RandomCoord {
 		{
 			x = rand.nextInt(map.n-2)+1;
 			y = rand.nextInt(map.m-2)+1;
-			if(map.mapa[x][y]!=" ") { i--; continue;}
+			if(map.getMapValue(x,y)!=" ") { i--; continue;}
 		}
 	}
 

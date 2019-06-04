@@ -15,29 +15,30 @@ public class Moves implements IMoves{
 		find(objOnMap, map);
 	}
 	
-	private void move(int ii,int jj,MapElementsAbstract objOnMap, Map map)
+	private void move(int ii,int jj,MapElementsAbstract objOnMap, IMap map)
 	{
-		map.mapa[i][j]=" ";  //stare miejsce na mapie danego obiektu
+		map.setMapValue(i,j," "); //stare miejsce na mapie danego obiektu
 		
-		
-		objOnMap.x = ii;
-		objOnMap.y = jj;
+		objOnMap.setX(ii);
+		objOnMap.setY(jj);
 		
 		//potrzebuje wyglad jednego elementu tablicy (danego typu), wiec moge wybrac np. pierwszy (oxygen[0])
-		if(map.mapa[ii][jj]==map.oxygen[0].getAppearance()) {map.collectedO++; Toolkit.getDefaultToolkit().beep();} 
-		if(map.mapa[ii][jj]==map.food[0].getAppearance()) {map.collectedF++; Toolkit.getDefaultToolkit().beep();}
-		if(map.mapa[ii][jj]==map.water[0].getAppearance()) {map.collectedW++; Toolkit.getDefaultToolkit().beep();}
+		if(map.getMapValue(ii,jj)==map.getInfoOxygen().getAppearance()) {map.addOxyToCollected(); Toolkit.getDefaultToolkit().beep();} 
+		if(map.getMapValue(ii,jj)==map.getInfoFood().getAppearance()) {map.addFooToCollected(); Toolkit.getDefaultToolkit().beep();}
+		if(map.getMapValue(ii,jj)==map.getInfoWater().getAppearance()) {map.addWatToCollected(); Toolkit.getDefaultToolkit().beep();}
 		
-		map.mapa[ii][jj]=objOnMap.appearance;   
+		map.setMapValue(ii,jj,objOnMap.getAppearance());   
 	}
 	
 	private boolean condition(int genNum,int num, int ii, int jj, Map map) //zeby nie powtarzac skladni warunku w funkcji find
 	{   //krance mapy sa stale (ich wyglad sie nie bedzie zmienial)
-		if(genNum == num && map.mapa[ii][jj]!=map.colony.getAstro().getAppearance() && map.mapa[ii][jj]!=map.rover.getAppearance() && ii!=0 && jj!=0 && ii!=map.n-1 && jj!=map.m-1 ) return true;  	
+		if(genNum == num && map.getMapValue(ii,jj)!=map.colony.getAstro().getAppearance() && map.getMapValue(ii,jj)!=map.rover.getAppearance()
+		&& ii!=0 && jj!=0 && ii!=map.getWidth()-1 && jj!=map.getHeight()-1 )
+		return true;  	
 		else return false;
 	}
 	
-	private void find(MapElementsAbstract objOnMap, Map map) 
+	private void find(MapElementsAbstract objOnMap, Map map) //zmieniony system ruchu
 	{                                                       
 		Random rand = new Random();
 		int liczba; 

@@ -25,7 +25,7 @@ public class MarsRover extends MapElementsAbstract implements IMarsRover {
 		if(batteryStatus == 100)
 		{
 			appearance = "R";
-			map.mapa[this.x][this.y] = appearance;
+			map.setMapValue(this.x,this.y,appearance);
 			charging = false;
 			fuel = 100;
 			batteryStatus = 0;
@@ -39,7 +39,7 @@ public class MarsRover extends MapElementsAbstract implements IMarsRover {
 	    else if(fuel <= 0) 
 		{
 			appearance = "r";
-			map.mapa[this.x][this.y] = appearance;
+			map.setMapValue(this.x,this.y,appearance);
 			charge(map);
 		}
 		else makeMove(map);

@@ -38,7 +38,7 @@ public class MainClass {  //Mozna zrobic klase "Symulacja" z funkcja main
 			
 			firstMap.mapOutput();
 			
-			UsefulFun.sleep(1000); //dlugosc dnia to aktualnie 1s , bedzie mozna zmienic w parametrach symulacji
+			UsefulFun.sleep(100); //dlugosc dnia to aktualnie 1s , bedzie mozna zmienic w parametrach symulacji
 			
 			firstMap.day++;
 			

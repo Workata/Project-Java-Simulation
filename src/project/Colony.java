@@ -14,7 +14,7 @@ public class Colony implements IColony {
 	}
 	
 	@Override
-	public void addNewA(Map map)
+	public void addNewA(IMap map)
 	{
 		if(map.getDay() % frequencyOfSpawn == 0)
 		{

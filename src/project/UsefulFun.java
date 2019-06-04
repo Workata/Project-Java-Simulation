@@ -20,7 +20,7 @@ public class UsefulFun {
 		
 	}
 	
-	public static boolean end(Map firstMap)
+	public static boolean end(IMap firstMap)
 	{
 		if(firstMap.getNecessaryF() <= firstMap.getCollectedF() && firstMap.getNecessaryW() <= firstMap.getCollectedW() && firstMap.getNecessaryO() <= firstMap.getCollectedO() )
 		{
@@ -28,7 +28,7 @@ public class UsefulFun {
 			for(int i=0;i<20;i++)
 			{
 				if(i==4) System.out.println("          Liczba dni: "+firstMap.getDay());
-				if(i==5) System.out.println("          Liczba astronautow ostatniego dnia: "+firstMap.colony.getNumberOfA());
+				if(i==5) System.out.println("          Liczba astronautow ostatniego dnia: "+firstMap.getColonyInfo().getNumberOfA());
 				else System.out.println();
 			}
 		}

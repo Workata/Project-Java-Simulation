@@ -19,7 +19,7 @@ public class MarsRover extends MapElementsAbstract implements IMarsRover {
 	@Override
 	public boolean isCharging() {return charging;}
 	
-	private void charge(Map map)
+	private void charge(IMap map)
 	{
 		charging = true;
 		if(batteryStatus == 100)
@@ -33,7 +33,7 @@ public class MarsRover extends MapElementsAbstract implements IMarsRover {
 		else batteryStatus += 5;
 	}
 	@Override
-	public void checkStatus(Map map)
+	public void checkStatus(IMap map)
 	{
 		if (charging) charge(map);
 	    else if(fuel <= 0) 
@@ -46,7 +46,7 @@ public class MarsRover extends MapElementsAbstract implements IMarsRover {
 	}
 	
 	@Override
-	public void makeMove(Map map)     //Tutaj mamy paliwo przy ruchu, wiec nadpisujemy funkcje ruchu
+	public void makeMove(IMap map)     //Tutaj mamy paliwo przy ruchu, wiec nadpisujemy funkcje ruchu
 	{
 		step.moveElement(this, map);
 		fuel -= 2;

@@ -8,5 +8,5 @@ public interface IMapElements {
 	public void setY(int y);
 	public String getAppearance();
 	public void setAppearance(String shape);
-	public void makeMove(Map map);	
+	public void makeMove(IMap map);	
 }

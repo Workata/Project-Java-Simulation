@@ -5,24 +5,26 @@ package project;
  * @author Jakub Tołściuk
  * @author Piotr Gralczyk
  * @author Michał Pijanowski
- * @version 3.6.4
+ * @version 3.6.8
  */
 
 
-public class MainClass {  //Mozna zrobic klase "Symulacja" z funkcja main 
+public class MainClass {  
 
+	public static IMap firstMap;
+	
 	public static void main(String [] args)
 	{
-		Map firstMap = new Map();              //dostepny jest tez konstruktor z parametrami
+		firstMap = new Map();              //dostepny jest tez konstruktor z parametrami
 		
 		while(true)
 		{
-			for(int i=0;i<firstMap.colony.getNumberOfA();i++) firstMap.colony.getPointedAstro(i).makeMove(firstMap);
-			for(int i=0;i<2;i++) firstMap.rover.checkStatus(firstMap); //lazik robi aktualnie 2 ruchy dziennie
+			for(int i=0;i<firstMap.getColonyInfo().getNumberOfA();i++) firstMap.getColonyInfo().getPointedAstro(i).makeMove(firstMap);
+			for(int i=0;i<2;i++) firstMap.getRoverInfo().checkStatus(firstMap); //lazik robi aktualnie 2 ruchy dziennie
 			
 			if(UsefulFun.end(firstMap)) break;
 
-			firstMap.colony.addNewA(firstMap);
+			firstMap.getColonyInfo().addNewA(firstMap);
 			
 			firstMap.mapOutput();
 			

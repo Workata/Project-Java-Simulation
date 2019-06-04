@@ -8,7 +8,7 @@ public class Moves implements IMoves{
 	private int i,j;
 	
 	@Override
-	public void moveElement(MapElementsAbstract objOnMap, Map map)  //polimorfizm bo moge przekazac astronaute lub lazik lub jakies zagrozenia 
+	public void moveElement(MapElementsAbstract objOnMap, IMap map)  //polimorfizm bo moge przekazac astronaute lub lazik lub jakies zagrozenia 
 	{
 		i = objOnMap.getX();  
 		j = objOnMap.getY();  
@@ -30,14 +30,14 @@ public class Moves implements IMoves{
 		map.setMapValue(ii,jj,objOnMap.getAppearance());   
 	}
 	
-	private boolean condition(int genNum,int num, int ii, int jj, Map map) //zeby nie powtarzac skladni warunku w funkcji find
+	private boolean condition(int genNum,int num, int ii, int jj, IMap map) //zeby nie powtarzac skladni warunku w funkcji find
 	{   
 		if(genNum == num && ( map.getMapValue(ii,jj)==" " ||  map.getMapValue(ii,jj)==map.getInfoOxygen().getAppearance() || map.getMapValue(ii,jj)==map.getInfoFood().getAppearance() || map.getMapValue(ii,jj)==map.getInfoWater().getAppearance()))
 		return true;  	
 		else return false;
 	}
 	
-	private void find(MapElementsAbstract objOnMap, Map map) //zmieniony system ruchu
+	private void find(MapElementsAbstract objOnMap, IMap map) //zmieniony system ruchu
 	{                                                       
 		Random rand = new Random();
 		int liczba; 

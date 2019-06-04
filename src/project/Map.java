@@ -7,8 +7,8 @@ public class Map implements IMap  {
 	private int n,m;
 	private int day;
 	private int numOfGenO, numOfGenF, numOfGenW;
-	public int collectedO,collectedF,collectedW;
-	public int necessaryO, necessaryF, necessaryW;
+	private int collectedO,collectedF,collectedW;
+	private int necessaryO, necessaryF, necessaryW;
 	private IMapElements water[]; 
 	private IMapElements oxygen[];
 	private IMapElements food[];
@@ -39,6 +39,10 @@ public class Map implements IMap  {
 	public int getDay() { return day;}
 	@Override
 	public void nextDay() { day++; }
+	@Override
+	public IColony getColonyInfo() { return colony; }
+	@Override
+	public IMarsRover getRoverInfo() {return rover;}
 	
 	public int getCollectedO() { return collectedO;}
 	public int getCollectedF() { return collectedF;}

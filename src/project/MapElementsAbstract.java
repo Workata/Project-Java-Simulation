@@ -26,5 +26,5 @@ public abstract class MapElementsAbstract implements IMapElements {
 	@Override
 	public void setAppearance(String shape) {appearance = shape;}
 	@Override
-	public void makeMove(Map map){step.moveElement(this, map);}
+	public void makeMove(IMap map){step.moveElement(this, map);}
 }

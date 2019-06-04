@@ -31,9 +31,8 @@ public class Moves implements IMoves{
 	}
 	
 	private boolean condition(int genNum,int num, int ii, int jj, Map map) //zeby nie powtarzac skladni warunku w funkcji find
-	{   //krance mapy sa stale (ich wyglad sie nie bedzie zmienial)
-		if(genNum == num && map.getMapValue(ii,jj)!=map.colony.getAstro().getAppearance() && map.getMapValue(ii,jj)!=map.rover.getAppearance()
-		&& ii!=0 && jj!=0 && ii!=map.getWidth()-1 && jj!=map.getHeight()-1 )
+	{   
+		if(genNum == num && ( map.getMapValue(ii,jj)==" " ||  map.getMapValue(ii,jj)==map.getInfoOxygen().getAppearance() || map.getMapValue(ii,jj)==map.getInfoFood().getAppearance() || map.getMapValue(ii,jj)==map.getInfoWater().getAppearance()))
 		return true;  	
 		else return false;
 	}

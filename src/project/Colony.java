@@ -16,7 +16,7 @@ public class Colony implements IColony {
 	@Override
 	public void addNewA(Map map)
 	{
-		if(map.day % frequencyOfSpawn == 0)
+		if(map.getDay() % frequencyOfSpawn == 0)
 		{
 			table[numberOfA] = new Astronauts();
 			table[numberOfA].active = true;
@@ -43,10 +43,5 @@ public class Colony implements IColony {
 	public int getFrequencyOfSpawn()
 	{
 		return frequencyOfSpawn;
-	}
-	@Override
-	public Astronauts getAstro()  //zeby dostac sie do wlasnosci astronauty
-	{
-		return table[0];
 	}
 }

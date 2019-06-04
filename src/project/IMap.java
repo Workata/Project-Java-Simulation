@@ -12,5 +12,13 @@ public interface IMap {
 	public void addOxyToCollected();
 	public void addFooToCollected();
 	public void addWatToCollected();
+	public int getDay();
+	public void nextDay();
+	public int getCollectedO();
+	public int getCollectedF();
+	public int getCollectedW();
+	public int getNecessaryO();
+	public int getNecessaryF();
+	public int getNecessaryW();
 
 }

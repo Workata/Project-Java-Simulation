@@ -4,7 +4,8 @@ package project;
 public class Map implements IMap  {
 	
 	private String[][] mapa ;
-	public int n,m,day;
+	private int n,m;
+	private int day;
 	private int numOfGenO, numOfGenF, numOfGenW;
 	public int collectedO,collectedF,collectedW;
 	public int necessaryO, necessaryF, necessaryW;
@@ -34,6 +35,18 @@ public class Map implements IMap  {
 	public void addWatToCollected() {collectedW++;}
 	@Override
 	public void setMapValue(int x, int y, String shape) { mapa[x][y] = shape; }
+	@Override
+	public int getDay() { return day;}
+	@Override
+	public void nextDay() { day++; }
+	
+	public int getCollectedO() { return collectedO;}
+	public int getCollectedF() { return collectedF;}
+	public int getCollectedW() { return collectedW;}
+	public int getNecessaryO() { return necessaryO;}
+	public int getNecessaryF() { return necessaryF;}
+	public int getNecessaryW() { return necessaryW;}
+	
 	
 	private void creating(int numOfGenW,int numOfGenO,int numOfGenF,int n, int m) {
 		
@@ -92,9 +105,9 @@ public class Map implements IMap  {
 	}
 }	
 	
-	public Map()                                //domyslny konstruktor, bez parametrow
+	public Map()         //domyslny konstruktor, bez parametrow
 	{	
-		numOfGenO = 20;
+		numOfGenO = 20;   //TODO brakuje jednego "O" na mapie?
 		numOfGenF = 20;
 		numOfGenW = 20;
 		collectedO = 0;
@@ -109,7 +122,7 @@ public class Map implements IMap  {
 		creating(numOfGenW, numOfGenO,numOfGenF,n,m);
 		
 	}
-	public Map(int numOfGenW, int numOfGenO, int numOfGenF, int necessaryW, int necessaryO, int necessaryF, int n, int m)                     //konstruktor z podanymi parametrami
+	public Map(int numOfGenW, int numOfGenO, int numOfGenF, int necessaryW, int necessaryO, int necessaryF, int n, int m)    //konstruktor z podanymi parametrami
 	{
 		this.numOfGenO = numOfGenO;
 		this.numOfGenF = numOfGenF;

@@ -6,5 +6,4 @@ public interface IColony {
 	public int getNumberOfA();
 	public Astronauts getPointedAstro(int i);
 	public int getFrequencyOfSpawn();
-	public Astronauts getAstro();
 }

@@ -81,7 +81,7 @@ public class Map extends MapInformationsAbstract  {
 		collectedO = 0;
 		collectedF = 0;
 		collectedW = 0;
-		necessaryO = 21;
+		necessaryO = 6;
 		necessaryF = 3;
 		necessaryW = 7;
 		

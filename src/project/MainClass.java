@@ -8,14 +8,11 @@ package project;
  * @version 3.6.8
  */
 
-
 public class MainClass {  
-
-	public static IMap firstMap;
 	
 	public static void main(String [] args)
 	{
-		firstMap = new Map();              //dostepny jest tez konstruktor z parametrami
+		IMap firstMap = new Map();              //dostepny jest tez konstruktor z parametrami
 		
 		while(true)
 		{
@@ -32,10 +29,7 @@ public class MainClass {
 			
 			firstMap.nextDay();
 			
-			UsefulFun.clearScreen();
-			
+			UsefulFun.clearScreen();	
 		}
-		
 	}
-	
 }

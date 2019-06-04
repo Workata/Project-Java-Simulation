@@ -27,21 +27,12 @@ public class Colony implements IColony {
 
 			numberOfA++;
 		}
-	
 	}
 	@Override
-	public int getNumberOfA()
-	{
-		return numberOfA;
-	}
+	public int getNumberOfA() { return numberOfA; }
 	@Override
-	public Astronauts getPointedAstro(int i)
-	{
-		return table[i];
-	}
+	public Astronauts getPointedAstro(int i) { return table[i]; }
 	@Override
-	public int getFrequencyOfSpawn()
-	{
-		return frequencyOfSpawn;
-	}
+	public int getFrequencyOfSpawn() {return frequencyOfSpawn; }
+
 }

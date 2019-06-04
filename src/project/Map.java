@@ -20,7 +20,7 @@ public class Map extends MapInformationsAbstract  {
 		rover = new MarsRover();
 		colony = new Colony(10);
 	
-	mapa = new String[n][m];
+	mapa = new String[n+1][m+1];
 	day = 1;
 	for(int i=0;i<n;i++)
 	{

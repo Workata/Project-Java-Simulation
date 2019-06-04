@@ -33,8 +33,7 @@ public class Moves implements IMoves{
 	
 	private boolean condition(int genNum,int num, int ii, int jj, Map map) //zeby nie powtarzac skladni warunku w funkcji find
 	{   //krance mapy sa stale (ich wyglad sie nie bedzie zmienial)
-		if(genNum == num && map.mapa[ii][jj]!=map.colony.getAstro().getAppearance() && map.mapa[ii][jj]!=map.rover.getAppearance() && map.mapa[ii][jj]!="┌" && map.mapa[ii][jj]!="┘" && map.mapa[ii][jj]!="┐" && map.mapa[ii][jj]!="└" && map.mapa[ii][jj]!="─" && map.mapa[ii][jj]!="│" )  	
-		return true;
+		if(genNum == num && map.mapa[ii][jj]!=map.colony.getAstro().getAppearance() && map.mapa[ii][jj]!=map.rover.getAppearance() && ii!=0 && jj!=0 && ii!=map.n-1 && jj!=map.m-1 ) return true;  	
 		else return false;
 	}
 	
@@ -50,7 +49,7 @@ public class Moves implements IMoves{
 		else if(condition(liczba,3,i,j+1,map)) { move(i,j+1,objOnMap,map);}
 		else if(condition(liczba,4,i+1,j+1,map)) { move(i+1,j+1,objOnMap,map); }
 		else if(condition(liczba,5,i+1,j,map)) {move(i+1,j,objOnMap,map); }
-		else if(condition(liczba,6,i+1,j,map)) {move(i+1,j-1,objOnMap,map);}
+		else if(condition(liczba,6,i+1,j-1,map)) {move(i+1,j-1,objOnMap,map);}
 		else if(condition(liczba,7,i,j-1,map)) {move(i,j-1,objOnMap,map);}
 		else if(condition(liczba,8,i-1,j-1,map)) {move(i-1,j-1,objOnMap,map);}					
 		

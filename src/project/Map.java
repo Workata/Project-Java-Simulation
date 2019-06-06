@@ -83,6 +83,8 @@ public class Map implements IMap  {
 		}
 	}
 	
+	
+	
 	private void creating(int numOfGenW,int numOfGenO,int numOfGenF,int n, int m) {
 		
 		water= new Resources[ComparingNumbers(numOfGenW,0)+1];
@@ -153,25 +155,6 @@ public class Map implements IMap  {
 		
 	}
 	
-	public void mapOutput()
-	{
-		for(int i=0;i<this.n;i++)
-		{
-			for(int j=0;j<this.m;j++)
-			{
-				System.out.print(mapa[i][j]);
-			}
-			if(i==0) System.out.print("        Water: " + collectedW + " / " + necessaryW);
-			if(i==1) System.out.print("        Oxygen: " + collectedO + " / " + necessaryO);
-			if(i==2) System.out.print("        Food: " + collectedF + " / " + necessaryF);
-			if(i==4) System.out.print("        Day: " + day);
-			if(i==5) System.out.print("        Support coming in "+ (colony.getFrequencyOfSpawn() - (day % colony.getFrequencyOfSpawn())) +" days");
-			if(i==7 && rover.isCharging() ==false) System.out.print("        Fuel: " + rover.getFuel());
-			if(i==7 && rover.isCharging() ==true) System.out.print("        Charging: " + rover.getBatteryStatus() +"%");
-			if(i==8) System.out.print("        Number of Astronauts: "+colony.getNumberOfA());
-			System.out.print("\n");
-		}
-		System.out.print("\n");
-	}
+	
 
 }

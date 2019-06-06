@@ -39,7 +39,7 @@ public class Map extends MapInformationsAbstract implements IMap  {
 	@Override
 	public IMarsRover getRoverInfo() {return rover;} // to samo tylko, ze z lazikiem
 	@Override
-	public int getCollectedO() { return collectedO;}
+	public int getCollectedO() { return collectedO;}  //zwraca liczbe zdobytego 
 	@Override
 	public int getCollectedF() { return collectedF;}
 	@Override

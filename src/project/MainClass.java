@@ -12,7 +12,7 @@ public class MainClass {
 	
 	public static void main(String [] args)
 	{
-		IMap firstMap = new Map();              //dostepny jest tez konstruktor z parametrami
+		IMap firstMap = new Map(1,1,1,4,4,4,20,50);              //dostepny jest tez konstruktor z parametrami
 		
 		while(true)
 		{

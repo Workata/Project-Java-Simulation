@@ -51,12 +51,41 @@ public class Map implements IMap  {
 	public int getNecessaryF() { return necessaryF;}
 	public int getNecessaryW() { return necessaryW;}
 	
+	private int ComparingNumbers(int a,int b) {
+		if(a<b)
+			return b;
+		else
+			return a;
+	}
+	
+	private void ResourceSpawner(int NumToGen,String apperance, IMapElements[] type) {
+		
+		for(int i=0;i<=NumToGen;i++) {
+			if(i==0)
+			{
+				type[i]= new Resources();
+				type[i].setAppearance(apperance);	
+			}
+			else
+			{
+				type[i] = new Resources();  //trzeba zainicjowac kazdy obiekt w talblicy, cholernie WAZNE !!!
+				type[i].setAppearance("W");
+				type[i].setX(RandomCoord.getRandX(this));
+				type[i].setY(RandomCoord.getRandY(this));
+				mapa[type[i].getX()][type[i].getY()] = type[i].getAppearance();
+			}
+		}
+	}
 	
 	private void creating(int numOfGenW,int numOfGenO,int numOfGenF,int n, int m) {
 		
-		water= new Resources[numOfGenW];
-		oxygen= new Resources[numOfGenO];
-		food = new Resources[numOfGenF];
+		water= new Resources[ComparingNumbers(numOfGenW,1)];
+		oxygen= new Resources[ComparingNumbers(numOfGenO,1)];
+		food = new Resources[ComparingNumbers(numOfGenF,1)];
+		//ResourceSpawner(numOfGenW,"W",water);
+		//ResourceSpawner(numOfGenO,"O",oxygen);
+		//ResourceSpawner(numOfGenF,"F",food);
+		
 		rover = new MarsRover();
 		colony = new Colony(10);
 	

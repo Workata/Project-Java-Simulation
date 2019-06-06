@@ -67,10 +67,10 @@ public class Map implements IMap  {
 				type[0].setAppearance(apperance);	
 			}
 			else{
-				for(int i=0;i<NumToGen;i++) {
+				for(int i=0;i<=NumToGen;i++) {
 			
 				type[i] = new Resources();  //trzeba zainicjowac kazdy obiekt w talblicy, cholernie WAZNE !!!
-				type[i].setAppearance("W");
+				type[i].setAppearance(apperance);
 				type[i].setX(RandomCoord.getRandX(this));
 				type[i].setY(RandomCoord.getRandY(this));
 				mapa[type[i].getX()][type[i].getY()] = type[i].getAppearance();
@@ -83,9 +83,7 @@ public class Map implements IMap  {
 		water= new Resources[ComparingNumbers(numOfGenW,0)+1];
 		oxygen= new Resources[ComparingNumbers(numOfGenO,0)+1];
 		food = new Resources[ComparingNumbers(numOfGenF,0)+1];
-		ResourceSpawner(numOfGenW,"W",water);
-		ResourceSpawner(numOfGenO,"O",oxygen);
-		ResourceSpawner(numOfGenF,"F",food);
+		
 		
 		rover = new MarsRover();
 		colony = new Colony(10);
@@ -110,6 +108,9 @@ public class Map implements IMap  {
 	rover.setX(RandomCoord.getRandX(this));
 	rover.setY(RandomCoord.getRandY(this));
 	mapa[rover.getX()][rover.getY()]= rover.getAppearance();
+	ResourceSpawner(numOfGenO,"O",oxygen);
+	ResourceSpawner(numOfGenW,"W",water);
+	ResourceSpawner(numOfGenF,"F",food);
 	/*
 	for(int i=0;i<numOfGenW;i++) 
 	{

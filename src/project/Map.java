@@ -1,14 +1,11 @@
 package project;
 
 
-public class Map implements IMap  {
+public class Map extends MapInformationsAbstract implements IMap  {
 	
 	private String[][] mapa ;
 	private int n,m;
 	private int day;
-	private int numOfGenO, numOfGenF, numOfGenW;
-	private int collectedO,collectedF,collectedW;
-	private int necessaryO, necessaryF, necessaryW;
 	private IMapElements water[]; 
 	private IMapElements oxygen[];
 	private IMapElements food[];

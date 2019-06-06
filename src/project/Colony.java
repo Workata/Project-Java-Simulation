@@ -31,8 +31,8 @@ public class Colony implements IColony {
 	@Override
 	public int getNumberOfA() { return numberOfA; } //zwraca liczbe astronautow
 	@Override
-	public Astronauts getPointedAstro(int i) { return table[i]; }
+	public Astronauts getPointedAstro(int i) { return table[i]; } // zwraca referencje do konkretnego astronauty
 	@Override
-	public int getFrequencyOfSpawn() {return frequencyOfSpawn; }
+	public int getFrequencyOfSpawn() {return frequencyOfSpawn; } // zwraca czestotliwosc spawnu
 
 }

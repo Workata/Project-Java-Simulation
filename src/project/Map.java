@@ -11,33 +11,33 @@ public class Map extends MapInformationsAbstract implements IMap  {
 	IColony colony;
 	
 	@Override
-	public int getWidth() {return n;}
+	public int getWidth() {return n;}  //podaje szerokosc mapy
 	@Override
-	public int getHeight() {return m;}
+	public int getHeight() {return m;}  //podaje wysokosc mapy
 	@Override
-	public IMapElements getInfoWater() {return water[0];}
+	public IMapElements getInfoWater() {return water[0];} //zwraca obiekt (wystarczy jeden), zeby sie dostac do jego informacji
 	@Override
-	public IMapElements getInfoFood() {return food[0];}
+	public IMapElements getInfoFood() {return food[0];} //jak wyzej
 	@Override
-	public IMapElements getInfoOxygen() {return oxygen[0];}	
+	public IMapElements getInfoOxygen() {return oxygen[0];}	//jak wyzej
 	@Override
-	public String getMapValue(int x, int y) {return mapa[x][y];}
+	public String getMapValue(int x, int y) {return mapa[x][y];} //zwraca String mapy polozony na konkretnym punkcie
 	@Override
-	public void addOxyToCollected() {collectedO++;}
+	public void addOxyToCollected() {collectedO++;} 
 	@Override
 	public void addFooToCollected() {collectedF++;}
 	@Override
 	public void addWatToCollected() {collectedW++;}
 	@Override
-	public void setMapValue(int x, int y, String shape) { mapa[x][y] = shape; }
+	public void setMapValue(int x, int y, String shape) { mapa[x][y] = shape; } //zmienia wyglad mapy w danym punkcie
 	@Override
-	public int getDay() { return day;}
+	public int getDay() { return day;}			//zwraca dzien
 	@Override
-	public void nextDay() { day++; }
+	public void nextDay() { day++; }            //ustawia kolejny dzien
 	@Override
-	public IColony getColonyInfo() { return colony; }
+	public IColony getColonyInfo() { return colony; } // zwraca obiekt kolonii, zeby sie dostac do jego informacji
 	@Override
-	public IMarsRover getRoverInfo() {return rover;}
+	public IMarsRover getRoverInfo() {return rover;} // to samo tylko, ze z lazikiem
 	@Override
 	public int getCollectedO() { return collectedO;}
 	@Override
@@ -143,7 +143,6 @@ public class Map extends MapInformationsAbstract implements IMap  {
 		this.n=n;
 		this.m=m;
 		creating(numOfGenW, numOfGenO,numOfGenF,n,m);
-		
 	}
 	
 	public void mapOutput()

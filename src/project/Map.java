@@ -57,21 +57,23 @@ public class Map extends MapInformationsAbstract implements IMap  {
 		else return a;
 	}
 	
-	private void ResourceSpawner(int NumToGen,String apperance, IMapElements[] type) {	
+	private void ResourceSpawner(int NumToGen,String apperance, IMapElements[] type)
+	{	
 			if(NumToGen==0)
 			{
 				type[0]= new Resources();
 				type[0].setAppearance(apperance);	
 			}
-			else{
-				for(int i=0;i<=NumToGen;i++) {
-			
-				type[i] = new Resources();  
-				type[i].setAppearance(apperance);
-				type[i].setX(RandomCoord.getRandX(this));
-				type[i].setY(RandomCoord.getRandY(this));
-				mapa[type[i].getX()][type[i].getY()] = type[i].getAppearance();
-			}
+			else
+			{
+				for(int i=0;i<=NumToGen;i++)
+				{
+					type[i] = new Resources();  
+					type[i].setAppearance(apperance);
+					type[i].setX(RandomCoord.getRandX(this));
+					type[i].setY(RandomCoord.getRandY(this));
+					mapa[type[i].getX()][type[i].getY()] = type[i].getAppearance();
+				}
 		}
 	}
 	

@@ -22,6 +22,5 @@ public interface IMap {
 	public int getNecessaryW();
 	public IColony getColonyInfo();
 	public IMarsRover getRoverInfo();
-	public void mapOutput();
 
 }

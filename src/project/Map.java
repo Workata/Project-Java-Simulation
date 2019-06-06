@@ -43,12 +43,17 @@ public class Map implements IMap  {
 	public IColony getColonyInfo() { return colony; }
 	@Override
 	public IMarsRover getRoverInfo() {return rover;}
-	
+	@Override
 	public int getCollectedO() { return collectedO;}
+	@Override
 	public int getCollectedF() { return collectedF;}
+	@Override
 	public int getCollectedW() { return collectedW;}
+	@Override
 	public int getNecessaryO() { return necessaryO;}
+	@Override
 	public int getNecessaryF() { return necessaryF;}
+	@Override
 	public int getNecessaryW() { return necessaryW;}
 	
 	private int ComparingNumbers(int a,int b) {
@@ -69,7 +74,7 @@ public class Map implements IMap  {
 			else{
 				for(int i=0;i<=NumToGen;i++) {
 			
-				type[i] = new Resources();  //trzeba zainicjowac kazdy obiekt w talblicy, cholernie WAZNE !!!
+				type[i] = new Resources();  
 				type[i].setAppearance(apperance);
 				type[i].setX(RandomCoord.getRandX(this));
 				type[i].setY(RandomCoord.getRandY(this));
@@ -109,35 +114,9 @@ public class Map implements IMap  {
 	rover.setY(RandomCoord.getRandY(this));
 	mapa[rover.getX()][rover.getY()]= rover.getAppearance();
 	ResourceSpawner(numOfGenO,"O",oxygen);
-	ResourceSpawner(numOfGenW,"W",water);
+	ResourceSpawner(numOfGenW,"W",water);     
 	ResourceSpawner(numOfGenF,"F",food);
-	/*
-	for(int i=0;i<numOfGenW;i++) 
-	{
-		water[i] = new Resources();  //trzeba zainicjowac kazdy obiekt w talblicy, cholernie WAZNE !!!
-		water[i].setAppearance("W");
-		water[i].setX(RandomCoord.getRandX(this));
-		water[i].setY(RandomCoord.getRandY(this));
-		mapa[water[i].getX()][water[i].getY()] = water[i].getAppearance();
-	}
-	
-	for(int i=0;i<numOfGenO;i++)  
-	{
-		oxygen[i] = new Resources(); 
-		oxygen[i].setAppearance ("O");
-		oxygen[i].setX(RandomCoord.getRandX(this));
-		oxygen[i].setY(RandomCoord.getRandY(this));
-		mapa[oxygen[i].getX()][oxygen[i].getY()] = oxygen[i].getAppearance();
-	}
-	
-	for(int i=0;i<numOfGenF;i++)  
-	{
-		food[i] = new Resources(); 
-		food[i].setAppearance("F");
-		food[i].setX(RandomCoord.getRandX(this));
-		food[i].setY(RandomCoord.getRandY(this)); 
-		mapa[food[i].getX()][food[i].getY()] = food[i].getAppearance();
-	}*/
+
 }	
 	
 	public Map()         //domyslny konstruktor, bez parametrow

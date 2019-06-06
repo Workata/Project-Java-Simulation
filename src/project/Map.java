@@ -60,14 +60,15 @@ public class Map implements IMap  {
 	
 	private void ResourceSpawner(int NumToGen,String apperance, IMapElements[] type) {
 		
-		for(int i=0;i<=NumToGen;i++) {
-			if(i==0)
+		
+			if(NumToGen==0)
 			{
-				type[i]= new Resources();
-				type[i].setAppearance(apperance);	
+				type[0]= new Resources();
+				type[0].setAppearance(apperance);	
 			}
-			else
-			{
+			else{
+				for(int i=0;i<NumToGen;i++) {
+			
 				type[i] = new Resources();  //trzeba zainicjowac kazdy obiekt w talblicy, cholernie WAZNE !!!
 				type[i].setAppearance("W");
 				type[i].setX(RandomCoord.getRandX(this));
@@ -79,12 +80,12 @@ public class Map implements IMap  {
 	
 	private void creating(int numOfGenW,int numOfGenO,int numOfGenF,int n, int m) {
 		
-		water= new Resources[ComparingNumbers(numOfGenW,1)];
-		oxygen= new Resources[ComparingNumbers(numOfGenO,1)];
-		food = new Resources[ComparingNumbers(numOfGenF,1)];
-		//ResourceSpawner(numOfGenW,"W",water);
-		//ResourceSpawner(numOfGenO,"O",oxygen);
-		//ResourceSpawner(numOfGenF,"F",food);
+		water= new Resources[ComparingNumbers(numOfGenW,0)+1];
+		oxygen= new Resources[ComparingNumbers(numOfGenO,0)+1];
+		food = new Resources[ComparingNumbers(numOfGenF,0)+1];
+		ResourceSpawner(numOfGenW,"W",water);
+		ResourceSpawner(numOfGenO,"O",oxygen);
+		ResourceSpawner(numOfGenF,"F",food);
 		
 		rover = new MarsRover();
 		colony = new Colony(10);
@@ -109,7 +110,7 @@ public class Map implements IMap  {
 	rover.setX(RandomCoord.getRandX(this));
 	rover.setY(RandomCoord.getRandY(this));
 	mapa[rover.getX()][rover.getY()]= rover.getAppearance();
-	
+	/*
 	for(int i=0;i<numOfGenW;i++) 
 	{
 		water[i] = new Resources();  //trzeba zainicjowac kazdy obiekt w talblicy, cholernie WAZNE !!!
@@ -135,7 +136,7 @@ public class Map implements IMap  {
 		food[i].setX(RandomCoord.getRandX(this));
 		food[i].setY(RandomCoord.getRandY(this)); 
 		mapa[food[i].getX()][food[i].getY()] = food[i].getAppearance();
-	}
+	}*/
 }	
 	
 	public Map()         //domyslny konstruktor, bez parametrow

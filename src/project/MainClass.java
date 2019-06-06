@@ -12,7 +12,7 @@ public class MainClass {
 	
 	public static void main(String [] args)
 	{
-		IMap firstMap = new Map(1,1,1,4,4,4,20,50);              //dostepny jest tez konstruktor z parametrami
+		IMap firstMap = new Map(1,2,3,4,4,4,20,50);              //dostepny jest tez konstruktor z parametrami
 		
 		while(true)
 		{
@@ -23,7 +23,7 @@ public class MainClass {
 
 			firstMap.getColonyInfo().addNewA(firstMap);
 			
-			firstMap.mapOutput();
+			Printer.MapOutPut(firstMap);
 			
 			UsefulFun.sleep(1000); //dlugosc dnia to aktualnie 1s , bedzie mozna zmienic w parametrach symulacji
 			

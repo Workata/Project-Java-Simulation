@@ -2,13 +2,13 @@ package project;
 
 public class Astronauts extends MapElementsAbstract {
 	
-	public boolean active;
-	public int lives;         //zmienna pod katem rozszerzania projektu
+	public boolean active;     //zmienne pod katem rozszerzania projektu
+	public int lives;         
 	
-	public Astronauts()
+	public Astronauts()    
 	{
 		active = false;
 		lives = 3;            
-		appearance = "+";
+		appearance = "+";      //ustawienie wygladu obiektu
 	}
 }

@@ -4,8 +4,6 @@ package project;
 public class Map extends MapInformationsAbstract implements IMap  {
 	
 	private String[][] mapa ;
-	private int n,m;
-	private int day;
 	private IMapElements water[]; 
 	private IMapElements oxygen[];
 	private IMapElements food[];
@@ -53,16 +51,13 @@ public class Map extends MapInformationsAbstract implements IMap  {
 	@Override
 	public int getNecessaryW() { return necessaryW;}
 	
-	private int ComparingNumbers(int a,int b) {
-		if(a<b)
-			return b;
-		else
-			return a;
+	private int ComparingNumbers(int a,int b)
+	{
+		if(a<b) return b;
+		else return a;
 	}
 	
-	private void ResourceSpawner(int NumToGen,String apperance, IMapElements[] type) {
-		
-		
+	private void ResourceSpawner(int NumToGen,String apperance, IMapElements[] type) {	
 			if(NumToGen==0)
 			{
 				type[0]= new Resources();
@@ -115,10 +110,9 @@ public class Map extends MapInformationsAbstract implements IMap  {
 	ResourceSpawner(numOfGenF,"F",food);
 
 }	
-	
 	public Map()         //domyslny konstruktor, bez parametrow
 	{	
-		numOfGenO = 20;   //TODO brakuje jednego "O" na mapie?
+		numOfGenO = 20;   
 		numOfGenF = 20;
 		numOfGenW = 20;
 		collectedO = 0;

@@ -56,6 +56,13 @@ public class Map extends MapInformationsAbstract implements IMap  {
 		if(a<b) return b;
 		else return a;
 	}
+	private int IsPossible(int numtogen, int numtocoll) {
+		if(numtocoll<numtogen)
+			return numtocoll;
+		else
+			return numtogen;
+	}
+	
 	
 	private void ResourceSpawner(int NumToGen,String apperance, IMapElements[] type)
 	{	
@@ -139,9 +146,10 @@ public class Map extends MapInformationsAbstract implements IMap  {
 		collectedO = 0;
 		collectedF = 0;
 		collectedW = 0;
-		this.necessaryO = necessaryO;
-		this.necessaryF = necessaryF;
-		this.necessaryW = necessaryW;
+		
+		this.necessaryO = IsPossible(numOfGenO,necessaryO);
+		this.necessaryF = IsPossible(numOfGenF,necessaryF);
+		this.necessaryW = IsPossible(numOfGenW,necessaryW);
 		this.n=n;
 		this.m=m;
 		creating(numOfGenW, numOfGenO,numOfGenF,n,m);

@@ -25,7 +25,7 @@ public class MainClass {
 			
 			Printer.MapOutPut(firstMap);
 			
-			UsefulFun.sleep(1000); //dlugosc dnia to aktualnie 1s 
+			UsefulFun.sleep(100); //dlugosc dnia to aktualnie 1s 
 			
 			firstMap.nextDay();  //zmienia na kolejny dzien
 			

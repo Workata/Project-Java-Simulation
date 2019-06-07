@@ -10,7 +10,7 @@ public class Colony implements IColony {
 	public Colony(int spawnFrequency)
 	{
 		this.frequencyOfSpawn = spawnFrequency;
-		table[0] = new Astronauts();       //iniciuje pierwszego astronaute, zeby mos korzystac (od samego poczatku) z jego wlasnosci (wygladu) w f. move
+		table[0] = new Astronauts();            //iniciuje pierwszego astronaute, zeby mos korzystac (od samego poczatku) z jego wlasnosci (wygladu) w f. move
 	}
 	
 	@Override

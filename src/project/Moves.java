@@ -10,12 +10,12 @@ public class Moves implements IMoves{
 	@Override
 	public void moveElement(MapElementsAbstract objOnMap, IMap map)  //polimorfizm bo moge przekazac astronaute lub lazik lub jakies zagrozenia 
 	{
-		i = objOnMap.getX();  
+		i = objOnMap.getX();                //pobierz wspolrzedne obiektu
 		j = objOnMap.getY();  
-		find(objOnMap, map);
+		findPlaceToMove(objOnMap, map);
 	}
 	
-	private void move(int ii,int jj,MapElementsAbstract objOnMap, IMap map)
+	private void moveHere(int ii,int jj,MapElementsAbstract objOnMap, IMap map)
 	{
 		map.setMapValue(i,j," "); //stare miejsce na mapie danego obiektu
 		
@@ -30,29 +30,28 @@ public class Moves implements IMoves{
 		map.setMapValue(ii,jj,objOnMap.getAppearance());   
 	}
 	
-	private boolean condition(int genNum,int num, int ii, int jj, IMap map) //zeby nie powtarzac skladni warunku w funkcji find
+	private boolean canIMoveHere(int genNum,int num, int ii, int jj, IMap map) //zeby nie powtarzac skladni warunku w funkcji find
 	{   
 		if(genNum == num && ( map.getMapValue(ii,jj)==" " ||  map.getMapValue(ii,jj)==map.getInfoOxygen().getAppearance() || map.getMapValue(ii,jj)==map.getInfoFood().getAppearance() || map.getMapValue(ii,jj)==map.getInfoWater().getAppearance()))
 		return true;  	
 		else return false;
 	}
 	
-	private void find(MapElementsAbstract objOnMap, IMap map) //zmieniony system ruchu
+	private void findPlaceToMove(MapElementsAbstract objOnMap, IMap map) //zmieniony system ruchu
 	{                                                       
 		Random rand = new Random();
 		int liczba; 
 		
 		liczba = rand.nextInt(8)+1; //losowa liczba 1-8 rand.nextInt((max - min) + 1) + min
 		
-		if(condition(liczba,1,i-1,j,map)) { move(i-1,j,objOnMap,map);}
-		else if(condition(liczba,2,i-1,j+1,map)) { move(i-1,j+1,objOnMap,map); }
-		else if(condition(liczba,3,i,j+1,map)) { move(i,j+1,objOnMap,map);}
-		else if(condition(liczba,4,i+1,j+1,map)) { move(i+1,j+1,objOnMap,map); }
-		else if(condition(liczba,5,i+1,j,map)) {move(i+1,j,objOnMap,map); }
-		else if(condition(liczba,6,i+1,j-1,map)) {move(i+1,j-1,objOnMap,map);}
-		else if(condition(liczba,7,i,j-1,map)) {move(i,j-1,objOnMap,map);}
-		else if(condition(liczba,8,i-1,j-1,map)) {move(i-1,j-1,objOnMap,map);}					
-		
+		if(canIMoveHere(liczba,1,i-1,j,map)) {moveHere(i-1,j,objOnMap,map);}
+		else if(canIMoveHere(liczba,2,i-1,j+1,map)) { moveHere(i-1,j+1,objOnMap,map); }
+		else if(canIMoveHere(liczba,3,i,j+1,map)) { moveHere(i,j+1,objOnMap,map);}
+		else if(canIMoveHere(liczba,4,i+1,j+1,map)) { moveHere(i+1,j+1,objOnMap,map); }
+		else if(canIMoveHere(liczba,5,i+1,j,map)) {moveHere(i+1,j,objOnMap,map); }
+		else if(canIMoveHere(liczba,6,i+1,j-1,map)) {moveHere(i+1,j-1,objOnMap,map);}
+		else if(canIMoveHere(liczba,7,i,j-1,map)) {moveHere(i,j-1,objOnMap,map);}
+		else if(canIMoveHere(liczba,8,i-1,j-1,map)) {moveHere(i-1,j-1,objOnMap,map);}						
 	} 
 	
 } 

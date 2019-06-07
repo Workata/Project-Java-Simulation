@@ -51,13 +51,20 @@ public class Map extends MapInformationsAbstract implements IMap  {
 	@Override
 	public int getNecessaryW() { return necessaryW;}
 	
-	private int ComparingNumbers(int a,int b)
+	private int ComparingNumbers(int a,int b)//porównanie liczb i zwrócenie większej
 	{
 		if(a<b) return b;
 		else return a;
 	}
+	private int IsPossible(int numtogen, int numtocoll) { //Sprawdzanie czy warunki zakończenia symulacji są możliwe do spełnienia przy dannych liczbach
+		if(numtocoll<numtogen)
+			return numtocoll;
+		else
+			return numtogen;//jeżeli nie ustawiawmy liczbę potrzebnych zasobów na maksymalną możliwą
+	}
 	
-	private void ResourceSpawner(int NumToGen,String apperance, IMapElements[] type)
+	
+	private void ResourceSpawner(int NumToGen,String apperance, IMapElements[] type)//tworzenie obiektów resources i nadawanie im pozycji na mapie
 	{	
 			if(NumToGen==0)
 			{
@@ -139,9 +146,10 @@ public class Map extends MapInformationsAbstract implements IMap  {
 		collectedO = 0;
 		collectedF = 0;
 		collectedW = 0;
-		this.necessaryO = necessaryO;
-		this.necessaryF = necessaryF;
-		this.necessaryW = necessaryW;
+		
+		this.necessaryO = IsPossible(numOfGenO,necessaryO);
+		this.necessaryF = IsPossible(numOfGenF,necessaryF);
+		this.necessaryW = IsPossible(numOfGenW,necessaryW);
 		this.n=n;
 		this.m=m;
 		creating(numOfGenW, numOfGenO,numOfGenF,n,m);

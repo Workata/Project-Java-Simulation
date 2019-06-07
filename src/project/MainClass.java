@@ -12,7 +12,7 @@ public class MainClass {
 	
 	public static void main(String [] args)
 	{
-		IMap firstMap = new Map(20,20,20,6,5,7,20,50);   
+		IMap firstMap = new Map(20,20,0,1,1,1,20,50);   
 
 		while(true)
 		{

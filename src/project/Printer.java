@@ -2,7 +2,7 @@ package project;
 
 public class Printer {
 
-	public static void MapOutPut(IMap map)
+	public static void MapOutPut(IMap map)  //
 	{
 		for(int i=0;i<map.getWidth();i++)
 		{

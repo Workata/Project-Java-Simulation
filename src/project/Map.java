@@ -66,7 +66,7 @@ public class Map extends MapInformationsAbstract implements IMap  {
 			}
 			else
 			{
-				for(int i=0;i<=NumToGen;i++)
+				for(int i=0;i<NumToGen;i++)
 				{
 					type[i] = new Resources();  
 					type[i].setAppearance(apperance);

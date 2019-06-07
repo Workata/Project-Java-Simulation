@@ -5,16 +5,15 @@ package project;
  * @author Jakub Tołściuk
  * @author Piotr Gralczyk
  * @author Michał Pijanowski
- * @version 3.6.8
+ * @version 3.7.3
  */
 
 public class MainClass {  
 	
 	public static void main(String [] args)
 	{
-		IMap firstMap = new Map(1,1,1,4,4,4,20,50);   //dostepny jest tez konstruktor z parametrami
+		IMap firstMap = new Map(20,20,20,6,5,7,20,50);   
 
-		
 		while(true)
 		{
 			for(int i=0;i<firstMap.getColonyInfo().getNumberOfA();i++) firstMap.getColonyInfo().getPointedAstro(i).makeMove(firstMap); //wykonuje ruchy astronautami
@@ -26,7 +25,7 @@ public class MainClass {
 			
 			Printer.MapOutPut(firstMap);
 			
-			UsefulFun.sleep(1000); //dlugosc dnia to aktualnie 1s , bedzie mozna zmienic w parametrach symulacji
+			UsefulFun.sleep(1000); //dlugosc dnia to aktualnie 1s 
 			
 			firstMap.nextDay();  //zmienia na kolejny dzien
 			

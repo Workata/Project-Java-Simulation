@@ -14,13 +14,13 @@ public class UsefulFun {
 		}
 	}
 	
-	public static void clearScreen() {                //"czyszczenie konsoli" :)
+	public static void clearScreen() {                //"czyszczenie konsoli" 
 		
 		for(int k=0;k<100;k++)System.out.print("\n");
 		
 	}
 	
-	public static boolean end(IMap firstMap)
+	public static boolean end(IMap firstMap)  //sprawdzam czy warunki zakonczenia sa spelnione
 	{
 		if(firstMap.getNecessaryF() <= firstMap.getCollectedF() && firstMap.getNecessaryW() <= firstMap.getCollectedW() && firstMap.getNecessaryO() <= firstMap.getCollectedO() )
 		{

@@ -19,7 +19,7 @@ public class Colony implements IColony {
 		if(map.getDay() % frequencyOfSpawn == 0)  //sprawdzam czy dodac kolejnego astronaute
 		{
 			table[numberOfA] = new Astronauts();
-			table[numberOfA].active = true;   
+			table[numberOfA].active = true;      //ewentualna eliminacja astronauty przez jakies zagrozenie, ktorego nie dodalismy do symulacji - brak aktywnosci gdyby byl martwy
 			x = RandomCoord.getRandX(map);
 			y = RandomCoord.getRandY(map);			
 			table[numberOfA].x = x;
